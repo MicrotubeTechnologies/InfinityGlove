@@ -22,28 +22,9 @@ public class IMULeft : MonoBehaviour
     }
 
 
-    float speedFactor = 999.9f;
+    float speedFactor = 9.999f;
     bool flag_InitialRotation = true;
 
-#if BT_Commu
-    void Update()
-    {
-        if (BTCommu_Left.Instance.flag_RotationDataReady == false)
-        {
-            return;
-        }
-        if (flag_InitialRotation == true)
-        {
-            gyroInitialRotation = BTCommu_Left.Instance.rotation;
-            flag_InitialRotation = false;
-        }
-
-        Quaternion offsetRotation = Quaternion.Inverse(gyroInitialRotation) * BTCommu_Left.Instance.rotation;
-        //transform.localRotation = initialRotation * offsetRotation;
-        transform.localRotation = Quaternion.Lerp(transform.localRotation, initialRotation * offsetRotation, Time.deltaTime * speedFactor);
-
-    }
-#else
     void Update()
     {
 
@@ -59,6 +40,5 @@ public class IMULeft : MonoBehaviour
         transform.localRotation = Quaternion.Lerp(transform.localRotation, initialRotation * offsetRotation, Time.deltaTime * speedFactor);
 
     }
-#endif
 
 }

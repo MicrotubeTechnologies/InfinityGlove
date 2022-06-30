@@ -11,13 +11,14 @@ using BleInputdll;
 public class BleComm : MonoBehaviour
 {
     float m_Timer = 10.0f;
+    private float deltat; 
 
     public MTPL MTPL_PCB;
 
     // global parameters for 9 DoF fusion and AHRS (Attitude and Heading Reference System)
-    public float heading, pitch, roll, heading_neutral = 0, pitch_neutral = 0, roll_neutral = 0; 
+    public float heading, pitch, roll, heading_neutral = 0, pitch_neutral = 0, roll_neutral = 0;
 
-    public float[] sensorArray;
+    public float[] sensorArray = new float[16];
     public float[] ExtendSensorArray = new float[] { 9999, 9999, 9999, 9999, 9999 };
     public float[] FlexSensorArray = new float[] { 0, 0, 0, 0, 0 };
     public float[] sensors;
@@ -52,6 +53,7 @@ public class BleComm : MonoBehaviour
 
     void Update()
     {
+        deltat = Time.deltaTime/100;
 
         //Scan BLE devices 
         if (isScanning)
@@ -222,9 +224,8 @@ public class BleComm : MonoBehaviour
     {
         byte[] bytes = BLE.ReadBytes(248); //data input via bytes
         screentext = "Reading Data\n";
-        Debug.Log(bytes.Length);
-           
-        MTPL.ProcessByteData(in bytes, out sensors);
+        Debug.Log("time: " + deltat);   
+        MTPL.ProcessByteData(in bytes, in deltat, out sensors);
 
         foreach (float sensor in sensors)
         {

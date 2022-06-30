@@ -9,7 +9,7 @@ using UnityEditor;
 public class IMURight : MonoBehaviour
 {
 
-    public Transform leftHand;
+    public Transform rightHand;
     private float[] imuData;
     Quaternion initialRotation;
     Quaternion gyroInitialRotation;
@@ -19,27 +19,22 @@ public class IMURight : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        initialRotation = transform.localRotation;
         bleinput = GetComponent<BleComm>();
     }
 
 
-    float speedFactor = 999.9f;
-    bool flag_InitialRotation = true;
+    float speedFactor = 9.999f;
 
     void Update()
     {
 
-        if (flag_InitialRotation == true)
-        {
-            gyroInitialRotation = Quaternion.Euler(-bleinput.roll, bleinput.pitch, bleinput.heading);
-            flag_InitialRotation = false;
-        }
+        Quaternion targetRotation = Quaternion.Euler(
+            bleinput.roll, 
+            bleinput.pitch, 
+            bleinput.heading
+            );
 
-
-        Quaternion offsetRotation = Quaternion.Inverse(gyroInitialRotation) * Quaternion.Euler(bleinput.roll, bleinput.pitch, bleinput.heading);
-
-        transform.localRotation = Quaternion.Lerp(transform.localRotation, initialRotation * offsetRotation, Time.deltaTime * speedFactor);
+        transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, Time.deltaTime * speedFactor);
 
     }
 

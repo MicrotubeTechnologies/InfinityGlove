@@ -655,7 +655,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 4178794707174953915}
+      - m_Target: {fileID: 4178794707174953913}
         m_MethodName: setScan
         m_Mode: 1
         m_Arguments:
@@ -785,7 +785,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 4178794707174953915}
+      - m_Target: {fileID: 4178794707174953913}
         m_MethodName: NeutralButton
         m_Mode: 1
         m_Arguments:
@@ -1192,8 +1192,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 4178794707174953915}
-        m_MethodName: StartCalibrationHandler
+      - m_Target: {fileID: 4178794707174953913}
+        m_MethodName: CalibrateFingers
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1893,7 +1893,7 @@ Transform:
   m_GameObject: {fileID: 4178794707174953912}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.1, y: 0, z: 0}
-  m_LocalScale: {x: -1, y: 1, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 7407277359711404214}
   m_Father: {fileID: 57018627367927581}
@@ -2577,7 +2577,7 @@ GameObject:
   - component: {fileID: 1127402379581645227}
   - component: {fileID: 1213234054}
   - component: {fileID: 4178794707174953914}
-  - component: {fileID: 4178794707174953915}
+  - component: {fileID: 4178794707174953913}
   m_Layer: 0
   m_Name: Generic Hand_Right
   m_TagString: Untagged
@@ -2585,20 +2585,7 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &4178794707174953914
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4178794707174953912}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 708ca5bb31b0409409c8359bb2d67882, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  leftHand: {fileID: 1127402379581645227}
---- !u!114 &4178794707174953915
+--- !u!114 &4178794707174953913
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2616,23 +2603,7 @@ MonoBehaviour:
   heading_neutral: 0
   pitch_neutral: 0
   roll_neutral: 0
-  sensorArray:
-  - 0
-  - 0
-  - 0
-  - 0
-  - 0
-  - 0
-  - 0
-  - 0
-  - 0
-  - 0
-  - 0
-  - 0
-  - 0
-  - 0
-  - 0
-  - 0
+  sensorArray: []
   ExtendSensorArray:
   - 9999
   - 9999
@@ -2645,6 +2616,7 @@ MonoBehaviour:
   - 0
   - 0
   - 0
+  sensors: []
   isScanning: 0
   _connected: 0
   isTimerRunning: 0
@@ -2656,6 +2628,19 @@ MonoBehaviour:
   x: 0
   y: 0
   z: 0
+--- !u!114 &4178794707174953914
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4178794707174953912}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 708ca5bb31b0409409c8359bb2d67882, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rightHand: {fileID: 7407277359711404214}
 --- !u!4 &4263436292592963932
 Transform:
   m_ObjectHideFlags: 0
@@ -3268,9 +3253,9 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5914226955151723101}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: -1, y: 1, z: 1}
   m_Children:
   - {fileID: 6474839795411302177}
   - {fileID: 8799156735952412935}
