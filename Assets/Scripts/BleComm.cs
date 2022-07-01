@@ -18,7 +18,7 @@ public class BleComm : MonoBehaviour
     // global parameters for 9 DoF fusion and AHRS (Attitude and Heading Reference System)
     public float heading, pitch, roll, heading_neutral = 0, pitch_neutral = 0, roll_neutral = 0;
 
-    public float[] sensorArray = new float[16];
+    public float[] sensorArray = new float[18];
     public float[] ExtendSensorArray = new float[] { 9999, 9999, 9999, 9999, 9999 };
     public float[] FlexSensorArray = new float[] { 0, 0, 0, 0, 0 };
     public float[] sensors;
