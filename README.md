@@ -16,12 +16,13 @@ Instructions for use:
 
 
 For developers:
-1) More sensor data can be extracted from BleComm.cs in SensorArray:
-	a) sensorArray[0] to sensorArray[4] ==> Sensor 1 to Sensor 5
-	b) sensorArray[5] to sensorArray[7] ==> Roll, pitch, yaw
-	c) sensorArray[8] to sensorArray[10] ==> AccX, AccY, AccZ
-	d) sensorArray[11] to sensorArray[13] ==> GyroX, GyroY, GyroZ
-	e) sensorArray[14] to sensorArray[16] ==> MagX, MagY, MagZ
+More sensor data can be extracted from BleComm.cs in SensorArray.
+1) sensorArray[0] to sensorArray[4] ==> Sensor 1 to Sensor 5
+2) sensorArray[5] to sensorArray[7] ==> Roll, pitch, yaw
+3) sensorArray[8] to sensorArray[10] ==> AccX, AccY, AccZ
+4) sensorArray[11] to sensorArray[13] ==> GyroX, GyroY, GyroZ
+5) sensorArray[14] to sensorArray[16] ==> MagX, MagY, MagZ
+	
     
 
 
