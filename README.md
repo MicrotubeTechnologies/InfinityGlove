@@ -15,4 +15,15 @@ Instructions for use:
 10) There is slight drift and inaccuracies in the IMU. Click on Set Neutral to return the hand avatar to the neutral hand position.
 
 
+For developers:
+1) More sensor data can be extracted from BleComm.cs in SensorArray:
+    i) sensorArray[0] to sensorArray[4] ==> Sensor 1 to Sensor 5 
+    ii) sensorArray[5] to sensorArray[7] ==> Roll, pitch, yaw
+    iii) sensorArray[8] to sensorArray[10] ==> AccX, AccY, AccZ
+    iv) sensorArray[11] to sensorArray[13] ==> GyroX, GyroY, GyroZ
+    v) sensorArray[14] to sensorArray[16] ==> MagX, MagY, MagZ
+    
+
+
+
 
