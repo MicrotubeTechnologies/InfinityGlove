@@ -280,7 +280,7 @@ public class BleComm : MonoBehaviour
     // Store calibrated values
     public void CalibrateFingers()
     {
-
+        Debug.Log("Enter calibration");
         if (m_Timer > 5)
         {
 

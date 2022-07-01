@@ -902,7 +902,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 
+  m_Text: CalibrationText
 --- !u!222 &765155426
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1193,7 +1193,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 4178794707174953913}
-        m_MethodName: CalibrateFingers
+        m_MethodName: StartCalibrationHandler
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
