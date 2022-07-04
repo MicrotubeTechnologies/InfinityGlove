@@ -30,7 +30,7 @@ public class IMURight : MonoBehaviour
 
         Quaternion targetRotation = Quaternion.Euler(
             bleinput.roll, 
-            bleinput.pitch, 
+            -bleinput.pitch, 
             bleinput.heading
             );
 
