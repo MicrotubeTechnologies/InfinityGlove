@@ -53,7 +53,7 @@ public class BleComm : MonoBehaviour
 
     void Update()
     {
-        deltat = Time.deltaTime/200; //adjust this value, smaller number reduces drift, but less sensitive to movements. 
+        deltat = Time.deltaTime/1000; //adjust this value, smaller number reduces drift, but less sensitive to movements. 
 
         //Scan BLE devices 
         if (isScanning)
@@ -224,7 +224,7 @@ public class BleComm : MonoBehaviour
     {
         byte[] bytes = BLE.ReadBytes(248); //data input via bytes
         screentext = "Reading Data\n";
-        Debug.Log("time: " + deltat);   
+        //Debug.Log("time: " + deltat);   
         MTPL.ProcessByteData(in bytes, in deltat, out sensors);
 
         foreach (float sensor in sensors)
