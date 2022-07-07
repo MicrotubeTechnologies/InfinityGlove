@@ -53,7 +53,7 @@ public class BleComm : MonoBehaviour
 
     void Update()
     {
-        deltat = Time.deltaTime/1000; //adjust this value, smaller number reduces drift, but less sensitive to movements. 
+        deltat = Time.deltaTime/100; //adjust this value, smaller number reduces drift, but less sensitive to movements. 
 
         //Scan BLE devices 
         if (isScanning)
